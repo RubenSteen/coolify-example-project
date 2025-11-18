@@ -32,7 +32,7 @@ USER www-data
 # =================================================================
 # Stage 2: Frontend assets compilation
 # =================================================================
-FROM node:24-alpine AS static-assets
+FROM node:22-alpine AS static-assets
 
 WORKDIR /app
 
