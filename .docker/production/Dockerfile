@@ -36,7 +36,9 @@ FROM node:24-alpine AS static-assets
 
 WORKDIR /app
 
-COPY . ./
+COPY --chown=node:node package*.json vite.config.js ./
+COPY --chown=node:node resources ./resources
+COPY --from=base --chown=node:node /var/www/html/vendor ./vendor
 
 RUN --mount=type=cache,target=/root/.npm \
     npm ci
