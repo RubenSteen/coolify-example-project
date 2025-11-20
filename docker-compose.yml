@@ -18,7 +18,7 @@ services:
       PHP_MEMORY_LIMIT: "128M" # Set the maximum amount of memory in bytes that a script is allowed to allocate. (https://www.php.net/manual/en/ini.core.php#ini.memory-limit) DEFAULT 20M
       PHP_POST_MAX_SIZE: "20M" # Sets max size of post data allowed. (https://www.php.net/manual/en/ini.core.php#ini.post-max-size) DEFAULT 8M
       PHP_UPLOAD_MAX_FILE_SIZE: "10M" # The maximum size of an uploaded file. (https://www.php.net/manual/en/ini.core.php#ini.upload-max-filesize) DEFAULT 10M
-    # volumes:
-    # - ./app/.env:/var/www/html/.env:ro
+    volumes:
+      - ./app/.env:/var/www/html/.env:ro
     # - ./app/database/database.sqlite:/var/www/html/database/database.sqlite
     # - ./app/storage:/var/www/html/storage
